@@ -100,5 +100,7 @@ webpack.config.js
 
 and now with the config file we can just run `webpack`
 ///////////////////////
-
+webpack --watch
+or
+npm run build -- --watch // the -- pass the following things to the thing in the script...
 
