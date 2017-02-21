@@ -127,5 +127,22 @@ like css live reload, the code gets reloaded on the fly
 
 /////////////////////
 
+React Router v4
+
+HashRouter - HOC (encapsulates behavior, has no display/view of it's own), can route, will beroot component
+Match
+don't have to do exactly...
+can put nav or someting as child of hashrouter, anything you want everywhere
+
+HashRouter #
+ugly, but server doesn't have to worry about anything...
+server needs to be aware of client side routes...
+makes it so you don't have to configure your server to care about your client side router
+
+don't use hashrouter if possible
+
+use browserrouter
+
+node can consume reactrouter routes with universal rendering
 //////////////////////////
 
