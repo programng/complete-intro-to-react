@@ -9,7 +9,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    publicPath: '/public/' //letting devserver know where to look for static files
+    publicPath: '/public/', //letting devserver know where to look for static files, stati serve out of here for devSErver
+    historyApiFallback: true //reroute 404 to the homepage
   },
   resolve: {
     extensions: ['.js', '.json'] // import Blah from '.Blah' ... will check if ./Blah exists, then ./Blah.js then ./Blah.json
@@ -26,6 +27,10 @@ module.exports = {
         test: /\.js$/,
         loader: 'eslint-loader', //reads from eslintrc.json
         exclude: /node_modules/
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
       {
         // exclude: /node_modules/,

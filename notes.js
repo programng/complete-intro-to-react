@@ -146,3 +146,21 @@ use browserrouter
 node can consume reactrouter routes with universal rendering
 //////////////////////////
 
+browserrouter
+add to wp config
+    historyApiFallback: true
+
+///////////////////////////
+Link to
+///////////////////////////
+
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+
+/////////////////
+        <pre><code>{JSON.stringify(preload, null, 4)}</code></pre>
+/////////////
+
+
