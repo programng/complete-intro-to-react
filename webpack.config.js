@@ -20,9 +20,21 @@ module.exports = {
     rules: [ // if passes these rules, run through loader
       {
         // exclude: /node_modules/,
-        include: path.resolve(__dirname, 'js'), //if not in js directory, do not run
+        include: path.resolve(__dirname, 'js'), // if not in js directory, do not run
         test: /\.js$/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [ // use 'use' if there's multiple loaders,
+          'style-loader', //injects style into js... bundling could be bad b/c need js to load for css to load
+          { // use object if you need to pass configs to your loader
+            loader: 'css-loader', //need both style and css
+            options: {
+              url: false // path to include image... itll try to inline the image, this means don't inline my images
+            }
+          }
+        ]
       }
     ]
   }
