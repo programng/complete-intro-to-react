@@ -8,6 +8,9 @@ module.exports = {
     path: path.join(__dirname, '/public'),
     filename: 'bundle.js'
   },
+  devServer: {
+    publicPath: '/public/' //letting devserver know where to look for static files
+  },
   resolve: {
     extensions: ['.js', '.json'] // import Blah from '.Blah' ... will check if ./Blah exists, then ./Blah.js then ./Blah.json
   },
@@ -18,6 +21,12 @@ module.exports = {
   },
   module: {
     rules: [ // if passes these rules, run through loader
+      {
+        enforce: 'pre', // before any of the loaders, do this (want to lint source files)
+        test: /\.js$/,
+        loader: 'eslint-loader', //reads from eslintrc.json
+        exclude: /node_modules/
+      },
       {
         // exclude: /node_modules/,
         include: path.resolve(__dirname, 'js'), // if not in js directory, do not run

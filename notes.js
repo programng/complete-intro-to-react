@@ -103,4 +103,29 @@ and now with the config file we can just run `webpack`
 webpack --watch
 or
 npm run build -- --watch // the -- pass the following things to the thing in the script...
+//////////////////////////
+ESLINT
+use eslint and include standard rules
+b/c if just use standard, can't customize
+.eslintrc.json
+
+"lint": "eslint js/**/*.js webpack.config.js",
+go into js directory and lint everything and go recursively deep...  also webpack.config.js
+npm run lint -s
+the -s gets rid of the ugly warnings
+npm run lint -s -- --fix
+
+can put linting in webpack that will run in webpack watch.. use the "pre-loader" (not preloader in wp2, just wp1.., use the enforce pre in wp2)
+///////////////////////////
+webpack-dev-server
+devserver has watch built in, so only ened to run devserver
+put devserver bit in wp config file
+useful if have python or ruby back-end, not so much node, for example.
+
+hot module reload
+like css live reload, the code gets reloaded on the fly
+
+/////////////////////
+
+//////////////////////////
 
