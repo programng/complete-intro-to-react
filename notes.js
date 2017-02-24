@@ -163,4 +163,25 @@ Link to
         <pre><code>{JSON.stringify(preload, null, 4)}</code></pre>
 /////////////
 
+const {shape, string, bool} = React.PropTypes
 
+  propTypes: {
+    show: shape({
+      poster: string,
+      title: string,
+      year: string,
+      description: string
+    })
+  },
+
+  ///////////////////////////////////
+
+            // <ShowCard key={show.imdbID} {...show} />
+            // <ShowCard key={show.imdbID} poster={show.poster} title={show.title} />
+
+/////////////////////////////////////
+
+state
+components can only modify their own state... if need to modify parent's state... sent function from parent and then the child will call it but the parent will modify itself
+
+////////////////////////////////////
