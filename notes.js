@@ -232,8 +232,15 @@ ENZYME... from airbnb... facebook uses it
 to shallow test-- so change in one thing only shows error for that component
 for example, if our show card fails, we nly want the show card test to fail, not the search test
 
+anything you can dump to json you can snapshot test on... for example, a server response
+
+to do the shallow stuff, get rid of the renderer thing and use the shallow stuff (see search spec)
+
 
 $ npm run test
 $ npm test
 $ npm t
 these are all equivalent
+
+-- let you put more stuff after your npm script
+
