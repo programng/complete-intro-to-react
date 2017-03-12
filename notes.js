@@ -185,3 +185,55 @@ state
 components can only modify their own state... if need to modify parent's state... sent function from parent and then the child will call it but the parent will modify itself
 
 ////////////////////////////////////
+  getInitialState () {
+    return {
+      searchTerm: ''
+    }
+  },
+  //////////////
+
+  JEST
+  jest will find .spec.js files
+  and maybe some others
+  automatically
+  can put the spec file next to the actual file
+
+need to have babel transpile code-- for import statements, b/c we want to use ES6 import statements... before we told webpack/babel to ignore trsnapiling our modules... but we want to use es6 syntax with node? so we need to tell babel
+add this to babelrc file, this transformer/plugin will only run in our test environment
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+compile modules when in a testing scenario...
+    then need to do
+  $ NODE_ENV=test jest
+  rather than just $ jest
+
+    JEST CACHES OUR BABel environment, so if we change the babel environment we need to do: we need to do --no-cache to clear out the cache
+  }
+
+  $ NODE_ENV=test jest --no-cache
+
+
+NODE_ENV=test jest -u
+
+-u means update the snapshot (when something has changed)
+
+each test should have one state.. if there are multiple states you want to test, write multiple snapshots
+tests should be deterministic!!
+
+$ NODE_ENV=test jest --watch
+this will rerun the test suite when we change something... there are other things you can do with this too...
+
+//////////////////////////////////////
+
+
+ENZYME... from airbnb... facebook uses it
+to shallow test-- so change in one thing only shows error for that component
+for example, if our show card fails, we nly want the show card test to fail, not the search test
+
+
+$ npm run test
+$ npm test
+$ npm t
+these are all equivalent
