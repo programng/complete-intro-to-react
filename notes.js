@@ -276,4 +276,12 @@ in between versions... new version doesn't work wellw ith this app yet...
 passing parameters through router url
           <Match pattern='/details/:id' component={Details} />
 
+/////////////
 
+sending props n
+
+
+<Match
+              pattern='/search'
+              component={(props) => <Search shows={preload.shows} {...props} />}
+          />
