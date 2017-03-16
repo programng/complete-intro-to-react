@@ -24,10 +24,10 @@ const Search = React.createClass({
               return `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0
             })
             .map((show) => {
-            return (
-              <ShowCard key={show.imdbID} {...show} />
-            )
-          })}
+              return (
+                <ShowCard key={show.imdbID} {...show} />
+              )
+            })}
         </div>
       </div>
     )

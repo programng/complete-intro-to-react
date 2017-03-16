@@ -269,3 +269,11 @@ can see how many times things get run (like functions get called)
 
 HOT MODULE RELOADER
 in between versions... new version doesn't work wellw ith this app yet...
+
+//////////////////////////
+
+
+passing parameters through router url
+          <Match pattern='/details/:id' component={Details} />
+
+
