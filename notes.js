@@ -321,3 +321,51 @@ can wrap match in a component that only goes when the person is authenticated
 
 ///////////////////
 
+class Header extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+
+    }
+
+    this.semeMethod = this.someMethod.bind(this)
+  }
+
+  someMethod () {
+    this.setState({blah: 'string'})
+  }
+
+  render () {
+    return (
+      <header>
+        <h1>
+          <Link to='/'>
+            svideo
+          </Link>
+        </h1>
+      </header>
+    )
+  }
+}
+
+extending component
+put proptypes at the bottm
+constructor and where to set state and binding this
+
+const { func, bool, string } = React.propTypes
+Header.propTypes = {
+  handleSearchTermChange: func,
+  showSearch: bool,
+  searchTerm: string
+}
+
+// put on the static prototype (vs putting on the constructor, which would be on the instance)
+// es6 classes do not autobind methods for you... so you can do:
+// onChange={this.someMethod.bind(this)}
+// this is bad b/c binds every time it runs
+
+//////////////////////
+
+// do not ship stage 2 code
+//
