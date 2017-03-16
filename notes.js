@@ -244,3 +244,28 @@ these are all equivalent
 
 -- let you put more stuff after your npm script
 
+enzyme most compelling reason to use is its shallow renderer
+sr doens't pull in js dom, doesn't use a browser, doesn't use phantom etc.... fast!
+
+two additional depths from enzyme... render... a lot slower.. don't use it if possible... to interact with dom apis is why you'd use it
+static rendering.... if you need to completely render everything out and have dom exploration available to you... jsdom and wraps cheerio on top of that.. cheerio is good for offline static analysis of html... cheerio has a jquery like interface to it
+
+brian holt abstracts business logic into modules and test modules... don't really test react component themselves b/c so much a/b testing at netflix, the thrasup in markup is huge
+
+///////////////////////
+CODE COVERAGE
+
+ALREADY BUILT INTO JEST
+$ npm run test -- --coverage
+code coverage report via instanbul, what everyone uses for javascript
+
+$ open coverage/lcov-report/index.html
+this opens in your browser...
+can see how many times things get run (like functions get called)
+
+
+
+//////////////////////
+
+HOT MODULE RELOADER
+in between versions... new version doesn't work wellw ith this app yet...
