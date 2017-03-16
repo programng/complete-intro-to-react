@@ -285,3 +285,39 @@ sending props n
               pattern='/search'
               component={(props) => <Search shows={preload.shows} {...props} />}
           />
+
+
+
+take the logic out of the component (Details in this case) and make Details a dumb component. Instead put the logic in the router, where it should be since it's wher ethe decisions happen of where the thing should be routed to and what should render.
+
+          <Match
+              pattern='/details/:id'
+              component={(props) => {
+                const shows = preload.shows.filter((show) => props.params.id === show.imbdID)
+                return <Details show={shows[0]} {...props} />
+              }}
+          />
+
+///////////////////////
+
+one readable way to organize the code.
+
+proptypes first
+get inistial state next
+lifecycle methods next
+functions i wrote
+render
+
+
+
+
+///////////////
+
+HIGHER ORDER COMONENT TO DO AUTHENTICATION
+
+browser router doesn't have any dispaly information, it's a HOC that has logic to do stuff...
+
+can wrap match in a component that only goes when the person is authenticated
+
+///////////////////
+
