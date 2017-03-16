@@ -3,7 +3,7 @@ import React from 'react'
 const Details = React.createClass({
   render () {
     return (
-      <h1>this.props.params.id</h1>
+      <h1>{this.props.params.id}</h1>
     )
   }
 })
